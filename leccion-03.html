@@ -10,6 +10,174 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Aprovechando bien el tiempo</title>
+    <style>
+        /* Paleta de colores aplicada: https://coolors.co/palette/d8f3dc-b7e4c7-95d5b2-74c69d-52b788-40916c-2d6a4f-1b4332-081c15 */
+        
+        :root {
+            --color-lightest: #D8F3DC;
+            --color-light: #B7E4C7;
+            --color-medium-light: #95D5B2;
+            --color-medium: #74C69D;
+            --color-accent: #52B788;
+            --color-accent-dark: #40916C;
+            --color-dark: #2D6A4F;
+            --color-darker: #1B4332;
+            --color-darkest: #081C15;
+        }
+
+        body {
+            background-color: var(--color-lightest);
+            color: var(--color-darkest);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--color-darkest);
+            color: var(--color-lightest);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            height: 100px;
+            max-width: 100%;
+        }
+
+        .contenedor-material {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-darkest);
+            margin-top: 1.5em;
+        }
+
+        h1 { border-bottom: 3px solid var(--color-accent); padding-bottom: 10px; }
+
+        blockquote {
+            background-color: var(--color-light);
+            border-left: 8px solid var(--color-dark);
+            border-radius: 10px;
+            margin: 2em 0;
+            padding: 20px 30px;
+            font-style: italic;
+        }
+
+        blockquote cite {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            font-style: normal;
+            margin-top: 15px;
+            color: var(--color-darker);
+        }
+
+        a {
+            color: var(--color-darkest);
+            text-decoration: none;
+            box-shadow: 0 4px 0 var(--color-accent);
+            font-weight: 900;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            box-shadow: 0 4px 0 var(--color-accent-dark);
+        }
+
+        u {
+            box-shadow: inset 0 -8px 0 var(--color-medium-light);
+            text-decoration: none;
+        }
+
+        .videos {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .figuras {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        /* Estilos específicos para la Matriz de Eisenhower */
+        .eisenhower-container {
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        .eisenhower-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 12px;
+            border: none;
+        }
+
+        .eisenhower-table td {
+            padding: 25px;
+            border-radius: 15px;
+            vertical-align: top;
+            text-align: left;
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .eisenhower-table td:hover {
+            transform: translateY(-5px);
+        }
+
+        .q-title {
+            display: block;
+            font-weight: 900;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(8, 28, 21, 0.15);
+        }
+
+        .q-content {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        /* Aplicación de paleta a cuadrantes */
+        .q1 { background-color: var(--color-accent-dark); color: white; }
+        .q1 .q-title { border-bottom-color: rgba(255,255,255,0.3); }
+        .q2 { background-color: var(--color-medium); color: var(--color-darkest); }
+        .q3 { background-color: var(--color-medium-light); color: var(--color-darkest); }
+        .q4 { background-color: var(--color-light); color: var(--color-darkest); border: 1px solid var(--color-accent) !important; }
+
+        footer {
+            background-color: var(--color-darkest);
+            color: var(--color-lightest);
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .contenedor-material { margin: 15px; padding: 20px; }
+            .eisenhower-table { display: block; }
+            .eisenhower-table tr { display: block; }
+            .eisenhower-table td { display: block; margin-bottom: 10px; width: auto; }
+        }
+    </style>
   </head>
 
   <body>
@@ -41,10 +209,7 @@
         <li>Planes y agenda</li>
         <li>Los enemigos del tiempo</li>
       </ul>
-      <!--
-      <h2>Audio de la lección</h2>
-      -->
-
+      
       <h2>Desarrollo</h2>
 
       <h3>Principios de mayordomía</h3>
@@ -158,28 +323,30 @@
         <strong>urgencia</strong> e <strong>importancia</strong>. Esto nos ayuda a enfocarnos en lo que realmente glorifica a Dios y no solo en 
         lo que "grita" por nuestra atención.
       </p>
-      <table>
-        <tr>
-          <td>
-              <span>C1: Urgente / Importante</span>
-              <span><strong>Hacer ahora.</strong> Crisis, problemas apremiantes, fechas límite de proyectos vitales.</span>
-          </td>
-          <td>
-              <span>C2: No Urgente / Importante</span>
-              <span><strong>Planificar.</strong> Oración, lectura bíblica, relaciones familiares, descanso, prevención. <em>¡Aquí vive la sabiduría!</em></span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-              <span>C3: Urgente / No Importante</span>
-              <span><strong>Delegar.</strong> Algunas llamadas, correos, reuniones sin propósito claro, interrupciones.</span>
-          </td>
-          <td>
-              <span>C4: No Urgente / No Importante</span>
-              <span><strong>Eliminar.</strong> "Scrolling" excesivo, distracciones irrelevantes, actividades de escape.</span>
-          </td>
-        </tr>
-      </table>
+      <div class="eisenhower-container">
+            <table class="eisenhower-table">
+                <tr>
+                    <td class="q1">
+                        <span class="q-title">C1: Urgente / Importante</span>
+                        <div class="q-content"><strong>Hacer ahora.</strong> Crisis, problemas apremiantes, fechas límite vitales.</div>
+                    </td>
+                    <td class="q2">
+                        <span class="q-title">C2: No Urgente / Importante</span>
+                        <div class="q-content"><strong>Planificar.</strong> Oración, lectura bíblica, familia, descanso. <em>¡Aquí vive la sabiduría!</em></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q3">
+                        <span class="q-title">C3: Urgente / No Importante</span>
+                        <div class="q-content"><strong>Delegar.</strong> Interrupciones, algunas llamadas, reuniones sin propósito.</div>
+                    </td>
+                    <td class="q4">
+                        <span class="q-title">C4: No Urgente / No Importante</span>
+                        <div class="q-content"><strong>Eliminar.</strong> Scrolling, maratones de series, distracciones irrelevantes.</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
       <h3>Planes y agenda</h3>
       <p>Debemos tener una agenda de actividades organizada en forma predeterminada en función de nuestras prioridades.</p>
