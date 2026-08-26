@@ -40,6 +40,15 @@ blockquote cite {
     text-align: right;
 }
 
+.contenedor-material hr {
+    border-color: #081C15;
+    border-style: solid;
+    border-width: 2.5px 0 0;
+    height: 0;
+    margin-inline: auto;
+    width: 80%;
+}
+
 a {
     color: #081C15;
     text-decoration: none;
@@ -157,6 +166,16 @@ tbody > tr:nth-of-type(even) {
     padding: 10px;
     font-weight: bold;
     text-align: center;
+}
+
+.tareas > .tarea {
+    border: 1.5px solid #081C15;
+    background-color: #B7E4C7;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
 }
 
 .texto-centrado {
